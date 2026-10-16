@@ -1,0 +1,56 @@
+---
+import Logo from './Logo.astro';
+import { navLinks, school } from '../data/content';
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<div class="utility-bar">
+  <div class="container utility-bar__inner">
+    <span class="utility-bar__statement"><span class="utility-bar__spark"></span> Future-ready education, inspired by STEM</span>
+    <a href={`tel:${school.phoneHref}`}>Admissions enquiries <span aria-hidden="true">↗</span> {school.phoneDisplay}</a>
+  </div>
+</div>
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <Logo />
+    <nav class="desktop-nav" aria-label="Main navigation">
+      {navLinks.map((item) => (
+        <a href={item.href} aria-current={currentPath === (item.href.replace(/\/$/, '') || '/') ? 'page' : undefined}>{item.title}</a>
+      ))}
+    </nav>
+    <a class="btn btn--red btn--small header-enquire" href="/contact/">Enquire now <span aria-hidden="true">↗</span></a>
+    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu hidden>
+    {navLinks.map((item) => (
+      <a href={item.href} aria-current={currentPath === (item.href.replace(/\/$/, '') || '/') ? 'page' : undefined}>{item.title}<span aria-hidden="true">↗</span></a>
+    ))}
+    <a href="/contact/">Contact us <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menu.hidden = !open;
+      document.body.classList.toggle('menu-open', open);
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    }));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 920) {
+        menu.hidden = true;
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      }
+    });
+  }
+</script>

@@ -1,0 +1,26 @@
+---
+import Logo from './Logo.astro';
+import { navLinks, school, prospectusNote } from '../data/content';
+---
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-identity">
+      <Logo light />
+      <p>Curious minds. Real-world skills. A future full of possibilities.</p>
+      <a class="footer-prospectus" href={school.prospectus} target="_blank" rel="noopener noreferrer">View original prospectus (2019–2020) <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="footer-column">
+      <h2>Explore</h2>
+      {navLinks.map((item) => <a href={item.href}>{item.title}</a>)}
+    </div>
+    <div class="footer-column">
+      <h2>Get in touch</h2>
+      <a href={`tel:${school.phoneHref}`}>{school.phoneDisplay}</a>
+      <a href={`mailto:${school.email}`}>{school.email}</a>
+      <address>{school.address}</address>
+      <a href="/contact/">Contact details & enquiry <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="container footer-caveat"><span class="footer-caveat__dot">i</span><p>{prospectusNote}</p></div>
+  <div class="container footer-bottom"><span>© {new Date().getFullYear()} MITstem International School — Website concept</span><span>Designed for the next generation <span aria-hidden="true">✳</span></span></div>
+</footer>

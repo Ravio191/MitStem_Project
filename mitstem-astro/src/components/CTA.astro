@@ -1,0 +1,11 @@
+---
+interface Props { label?: string; title?: string; description?: string; }
+const { label = 'LET’S TALK ABOUT THEIR FUTURE', title = 'Their next chapter starts with a conversation.', description = 'Have questions about the curriculum, school availability or admissions? Get in touch with the MITstem team.' } = Astro.props;
+---
+<section class="cta-panel" aria-labelledby="cta-heading">
+  <div class="container cta-panel__inner">
+    <div class="cta-panel__content"><p class="eyebrow eyebrow--white"><span class="eyebrow__line"></span>{label}</p><h2 id="cta-heading">{title}</h2><p>{description}</p></div>
+    <div class="cta-panel__action"><a class="btn btn--white" href="/contact/">Make an enquiry <span aria-hidden="true">↗</span></a><span>We’d love to hear from you.</span></div>
+    <span class="cta-panel__asterisk" aria-hidden="true">✳</span>
+  </div>
+</section>

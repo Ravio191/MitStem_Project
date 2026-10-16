@@ -1,0 +1,9 @@
+---
+interface Props { light?: boolean; }
+const { light = false } = Astro.props;
+---
+<a class:list={['brand-logo', { 'brand-logo--light': light }]} href="/" aria-label="MITstem International School — Home">
+  <span class="brand-logo__main"><strong>MIT</strong><em>stem</em><span class="brand-logo__dot">®</span></span>
+  <span class="brand-logo__school">INTERNATIONAL SCHOOL</span>
+  <span class="brand-logo__tagline">CREATING EXPERTS FOR FUTURE</span>
+</a>
