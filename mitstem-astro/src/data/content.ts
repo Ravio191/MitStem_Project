@@ -38,23 +38,13 @@ export const pathways = [
   },
   {
     number: '03',
-    title: 'IGCSE pathway',
+    title: 'IGCSE Pathway',
     stage: 'Key Stage 4',
     years: 'Years 10–11',
     ages: 'Approx. ages 14–16',
-    summary: 'A subject-focused pathway toward Cambridge IGCSE / O Level, as described in the prospectus.',
+    summary: 'A subject-focused pathway toward Cambridge IGCSE / O Level.',
     color: 'orange',
     subjects: ['English', 'Mathematics', 'Sciences', 'Languages', 'ICT', 'Technical electives'],
-  },
-  {
-    number: '04',
-    title: 'Cambridge Advanced',
-    stage: 'Pre-university',
-    years: 'AS & A Level',
-    ages: 'Approx. ages 16–19',
-    summary: 'The prospectus describes Cambridge International AS and A Level progression.',
-    color: 'pink',
-    subjects: ['Cambridge International AS Level', 'Cambridge International A Level'],
   },
 ];
 
