@@ -86,5 +86,3 @@ export const stems = [
     detail: 'Career awareness · Proposed study visits',
   },
 ];
-
-export const prospectusNote = 'This demonstration website is based on MITstem International School’s 2019–2020 prospectus. Contact the organisation to confirm current school status, programme availability, Cambridge recognition, fees and admissions details.';
