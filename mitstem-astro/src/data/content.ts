@@ -3,7 +3,7 @@ export const school = {
   motto: 'Creating experts for the future',
   phoneDisplay: '+60 3-5122 0701 / 0703',
   phoneHref: '+60351220701',
-  email: 'info@stemera.io',
+  email: 'enquiry@mitstem.edu.my',
   address: '26, Jalan Anggerik Vanilla Y 31/Y, Kota Kemuning, 40460 Shah Alam, Selangor, Malaysia',
   prospectus: '/MITstem-School-Prospectus-2019-2020.pdf',
 };
