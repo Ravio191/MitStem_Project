@@ -5,7 +5,6 @@ export const school = {
   phoneHref: '+60351220701',
   email: 'enquiry@mitstem.edu.my',
   address: '26, Jalan Anggerik Vanilla Y 31/Y, Kota Kemuning, 40460 Shah Alam, Selangor, Malaysia',
-  prospectus: '/MITstem-School-Prospectus-2019-2020.pdf',
 };
 
 export const navLinks = [
