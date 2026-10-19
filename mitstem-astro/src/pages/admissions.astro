@@ -1,13 +1,60 @@
+
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import CTA from '../components/CTA.astro';
 import { school } from '../data/content';
 ---
+
 <BaseLayout title="Admissions enquiries" description="Explore how to enquire about MITstem International School, its learning stages, school status, admissions and curriculum availability.">
   <section class="page-hero"><div class="container page-hero__content"><p class="eyebrow eyebrow--white"><span class="eyebrow__line"></span>Join the conversation</p><h1>Discover what the next chapter could look like.</h1><p>Choosing a school is an important decision. Start by asking questions about the school, programmes and what matters most to your family.</p></div></section>
+
   <section class="section-space"><div class="container"><SectionHeading eyebrow="A good place to begin" title="Four simple conversation starters." description="This is a suggested enquiry guide, not a published or verified admissions procedure." /><div class="admissions-steps"><article class="admissions-step"><span class="admissions-step__num">01</span><h3>Tell us about your needs</h3><p>Share your child’s learning stage, interests and questions.</p></article><article class="admissions-step"><span class="admissions-step__num">02</span><h3>Explore the curriculum</h3><p>Discuss the latest availability of Cambridge and STEM-related programmes.</p></article><article class="admissions-step"><span class="admissions-step__num">03</span><h3>Ask about visiting</h3><p>Request information about a meeting or a potential campus visit, where available.</p></article><article class="admissions-step"><span class="admissions-step__num">04</span><h3>Confirm the details</h3><p>Ask for current admission criteria, fees, dates, status and supporting documents.</p></article></div></div></section>
-  <section class="section-space section-soft"><div class="container story-grid"><div><p class="eyebrow"><span class="eyebrow__line"></span>Before applying</p><h2>Make an informed decision.</h2></div><div class="story-grid__copy"><a class="btn btn--red" href="/contact/">Contact admissions <span aria-hidden="true">↗</span></a></div></div></section>
+
+  <section class="section-space section-soft">
+    <div class="container story-grid admissions-decision">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__line"></span>Before applying</p>
+        <h2>Make an informed decision.</h2>
+      </div>
+      <div class="story-grid__copy">
+        <a class="btn btn--red" href="/contact/">Contact admissions <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
   <section class="section-space"><div class="container"><SectionHeading eyebrow="Frequently asked questions" title="Questions worth asking." align="center" /><div class="faq-list"><details><summary>Which age groups are described in the prospectus?</summary><p>The brochure shows Cambridge Primary (approximately ages 5–11), Lower Secondary (11–14), IGCSE/O Level (14–16) and Cambridge Advanced AS/A Level (16–19). Ask the team which year groups are currently supported.</p></details><details><summary>Does the website confirm that the school is operating?</summary><p>No. This website is a concept built from a historical prospectus. It does not independently verify the school's present status, premises, approvals or admissions.</p></details><details><summary>Are the Cambridge programmes currently accredited?</summary><p>The older brochure refers to Cambridge pathways and includes historical correspondence. That is not proof of current Cambridge recognition. Request updated supporting documentation directly.</p></details><details><summary>How can I request school fees or an appointment?</summary><p>Use the enquiry form or call the telephone number printed in the original brochure. Contact details are historical and may have changed.</p></details><details><summary>Where can I see the original information?</summary><p><a class="text-link" href={school.prospectus} target="_blank" rel="noopener noreferrer">Read the 2019–2020 prospectus <span aria-hidden="true">↗</span></a></p></details></div></div></section>
+
   <CTA title="Let's find answers together." description="Get in touch to request the most current and accurate admissions information." />
 </BaseLayout>
+
+<style>
+  .admissions-decision {
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .admissions-decision > div:first-child {
+    max-width: 550px;
+    min-width: 0;
+  }
+
+  .admissions-decision .story-grid__copy {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .admissions-decision {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+</style>
+
